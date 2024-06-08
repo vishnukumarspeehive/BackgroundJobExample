@@ -12,8 +12,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using BackgroundJobExample.EntityFrameworkCore;
 using BackgroundJobExample.MultiTenancy;
-using Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic;
-using Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Bundling;
 using Microsoft.OpenApi.Models;
 using OpenIddict.Validation.AspNetCore;
 using Volo.Abp;
@@ -25,12 +23,14 @@ using Volo.Abp.AspNetCore.Mvc.UI.Bundling;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared;
 using Volo.Abp.AspNetCore.Serilog;
 using Volo.Abp.Autofac;
-using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.Security.Claims;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.VirtualFileSystem;
+using Volo.Abp.BackgroundJobs.Hangfire;
+using Hangfire;
+using Volo.Abp.Hangfire;
 
 namespace BackgroundJobExample;
 
@@ -43,9 +43,10 @@ namespace BackgroundJobExample;
     typeof(AbpAspNetCoreMvcUiBasicThemeModule),
     typeof(AbpAccountWebOpenIddictModule),
     typeof(AbpAspNetCoreSerilogModule),
-    typeof(AbpSwashbuckleModule)
+    typeof(AbpSwashbuckleModule),
+    typeof(AbpBackgroundJobsHangfireModule)
 )]
-public class BackgroundJobExampleHttpApiHostModule : AbpModule
+    public class BackgroundJobExampleHttpApiHostModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {
@@ -72,6 +73,16 @@ public class BackgroundJobExampleHttpApiHostModule : AbpModule
         ConfigureVirtualFileSystem(context);
         ConfigureCors(context, configuration);
         ConfigureSwaggerServices(context, configuration);
+
+        ConfigureHangfire(context, configuration);
+    }
+
+    private void ConfigureHangfire(ServiceConfigurationContext context, IConfiguration configuration)
+    {
+        context.Services.AddHangfire(config =>
+        {
+            config.UseSqlServerStorage(configuration.GetConnectionString("Default"));
+        });
     }
 
     private void ConfigureAuthentication(ServiceConfigurationContext context)
@@ -218,9 +229,14 @@ public class BackgroundJobExampleHttpApiHostModule : AbpModule
             c.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);
             c.OAuthScopes("BackgroundJobExample");
         });
+        app.UseAbpHangfireDashboard("/hangfire", options =>
+        {
+            options.AsyncAuthorization = new[] { new AbpHangfireAuthorizationFilter() };
+        });
 
         app.UseAuditing();
         app.UseAbpSerilogEnrichers();
+        app.UseAbpHangfireDashboard();
         app.UseConfiguredEndpoints();
     }
 }
