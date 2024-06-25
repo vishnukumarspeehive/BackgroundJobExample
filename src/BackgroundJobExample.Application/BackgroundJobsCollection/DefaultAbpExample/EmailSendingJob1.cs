@@ -15,6 +15,6 @@ public class EmailSendingJob1 : AsyncBackgroundJob<EmailSendingArgs>, ITransient
     public async Task SendEmail(EmailSendingArgs args)
     {
 
-        Console.WriteLine("Email sent");
+        Console.WriteLine("Email sent1");
     }
 }

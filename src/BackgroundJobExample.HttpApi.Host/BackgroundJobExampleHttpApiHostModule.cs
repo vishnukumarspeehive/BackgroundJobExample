@@ -31,6 +31,9 @@ using Volo.Abp.VirtualFileSystem;
 using Volo.Abp.BackgroundJobs.Hangfire;
 using Hangfire;
 using Volo.Abp.Hangfire;
+using Autofac.Core;
+using BackgroundJobExample.Student;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace BackgroundJobExample;
 
@@ -83,6 +86,9 @@ namespace BackgroundJobExample;
         {
             config.UseSqlServerStorage(configuration.GetConnectionString("Default"));
         });
+        context.Services.AddHangfireServer();
+
+        context.Services.AddSingleton<IHostedService, RecurringJobStartupTask>();
     }
 
     private void ConfigureAuthentication(ServiceConfigurationContext context)

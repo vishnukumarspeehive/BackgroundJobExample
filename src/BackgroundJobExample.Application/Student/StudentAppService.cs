@@ -87,4 +87,43 @@ public class StudentAppService : ApplicationService
     //    return Task.CompletedTask;
     //}
     #endregion
+
+
+
+
+    public async Task<string> RecurringJobUsingHangFire2()
+    {
+        // Define the specific start time (e.g., today at 10:00 AM)
+        var startTime = DateTime.Now.Date.AddHours(10);
+        if (DateTime.Now > startTime)
+        {
+            // If the current time is past the start time, schedule for the next day at the same time
+            startTime = startTime.AddDays(1);
+        }
+
+        // Schedule the initial job
+        var initialJobId = Hangfire.BackgroundJob.Schedule<EmailSendingJob1>(
+            x => x.SendEmail(new EmailSendingArgs()
+            {
+                Subject = "test",
+                Body = "test",
+                EmailAddress = "test"
+            }),
+            startTime - DateTime.Now);
+
+        // Set up the recurring job to start after the initial job has been executed
+        Hangfire.RecurringJob.AddOrUpdate<EmailSendingJob1>(
+            Guid.NewGuid().ToString(),
+            x => x.SendEmail(new EmailSendingArgs()
+            {
+                Subject = "test",
+                Body = "test",
+                EmailAddress = "test"
+            }),
+            "*/5 * * * * *"  // Cron expression for every 5 seconds, adjust as necessary
+        );
+
+        return await Task.FromResult("Recurring job scheduled to start at: " + startTime);
+    }
+
 }
