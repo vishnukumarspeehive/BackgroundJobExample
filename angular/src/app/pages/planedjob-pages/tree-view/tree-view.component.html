@@ -1,0 +1,9 @@
+
+  <nz-input-group [nzSuffix]="suffixIcon" style="width:75%">
+    <input type="text" nz-input nzSize="small" placeholder="Search" [(ngModel)]="searchValue"  />
+  </nz-input-group>
+  <ng-template #suffixIcon>
+    <i nz-icon nzType="search" style="font-size: 12px;"></i>
+  </ng-template>
+ <nz-tree [nzData]="nodes" nzDraggable nzBlockNode (nzOnDrop)="nzEvent($event)"
+ [nzSearchValue]="searchValue"  (nzClick)="nzEvent($event)" style="color:#0e5679;font-size: 12px;"> </nz-tree>

@@ -1,0 +1,137 @@
+
+     .logo {
+      width: auto;
+      height: auto;
+      /* background: rgba(255, 255, 255, 0.2); */
+      /* margin: 16px 30px 16px 0; */
+      margin-top: -15px;
+      padding: 0px;
+      border-color: #0e5679;
+      background-color: white;
+      margin-left: -40px;
+
+    }
+    .navbar-brand{
+      font-size: 22px;
+      color:#0e5679;
+      background-color: white;
+  
+  }
+  ul{
+    color:#0e5679;
+    background-color: white;
+    font-size: 12px;
+  }
+  h4{
+    
+    color:#0e5679;
+    background-color: white;
+    position: relative;margin-left: 80%;
+    margin-top: -40px;
+  }
+ 
+  a{
+     
+    color:#0e5679;
+    background-color: white;
+    font-size: 13px;
+    font-family: sans-serif;
+  }
+  span{
+    position: relative;
+    margin-top:-500px;
+  }
+  .navbar-brand2{
+    font-size: 22px;
+    color:#0e5679;
+    background-color: white;
+    margin-left:70%;
+
+}
+    .header-menu {
+      line-height: 64px;
+      background-color: white;
+    }
+  
+    nz-sider{
+      height: 100vh;
+    
+    }
+    
+    .sider-menu {
+     height: 100vh;
+      border-right: 0;
+      color: #0e5679;
+      background: #fff;
+      font-weight: bold;
+      font-size: 17px;
+      margin-top: 5px;
+    }
+
+    .inner-layout {
+      padding: 0 24px 24px;
+     
+    }
+
+    nz-breadcrumb {
+      margin: 16px 0;
+     
+    }
+
+    nz-content {
+      background: #fff;
+      padding: 24px;
+      min-height: 280px;
+      
+    }
+    .ant-layout-header{
+      background-color: white;
+    }
+    li.ant-menu-item{
+      color: #0e5679;
+      background: #fff;
+      margin-bottom: 15px;
+      font-size: 12px;
+    }
+
+    .nz-menu-item{
+      font-size: 12px;
+    }
+
+    .trigger {
+      font-size: 18px;
+      line-height: 64px;
+      padding: 0 24px;
+      cursor: pointer;
+      transition: color 0.3s;
+      width: 200px;
+    }
+
+    .trigger:hover {
+      color: #1890ff;
+    }
+
+    li{
+      margin-bottom: 15px;
+    }
+.material-icons{
+  font-size: 20px;
+}
+span{
+  font-weight: 600;
+  font-family: sans-serif;
+}
+.iclass{
+  vertical-align: 0.125em;
+  margin-right: 6px; 
+  font-size: 17px;
+}
+.anticon{
+  vertical-align: 0.155em;
+}
+nz-icon{
+  vertical-align: 0.125em;
+}
+.subclass{
+ padding-left: 0px;
+}

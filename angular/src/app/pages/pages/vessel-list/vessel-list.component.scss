@@ -1,0 +1,38 @@
+
+      .search-box {
+        padding: 8px;
+      }
+
+      .search-box input {
+        width: 188px;
+        margin-bottom: 8px;
+        display: block;
+      }
+
+      [nz-button] {
+        margin-right: 8px;
+        margin-bottom: 12px;
+      }
+      button{
+        border-color: #2bb8c4;
+        color: #fff;
+        background: #0e5679;
+        border: 1px solid #dbdbdb;
+    }
+    td{
+     color:#0e5679;
+    }
+    .form-control{
+      font-size: 12px;
+      color: #0e5679;
+      font-family: sans-serif;
+    }
+    ngx-datatable{
+      font-size: 12px;
+      color: #0e5679;
+      font-family: sans-serif;
+    
+    }
+    .nzSearch{
+      width:200px;
+    }

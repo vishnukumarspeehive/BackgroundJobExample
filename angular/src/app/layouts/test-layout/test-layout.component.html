@@ -1,0 +1,65 @@
+<nz-layout >
+  <nz-header class="h">
+    <div class="logo">
+      <img src="../../assets/logo2.png" width="60px" height="45px">
+      &nbsp;
+      &nbsp;
+      <a href="#" class="navbar-brand">Maintenance</a>
+    </div>
+    <ul nz-menu nzTheme="light" nzMode="horizontal" class="header-menu">
+      <!-- <li nz-menu-item nzSelected>nav 1</li>
+      <li nz-menu-item>nav 2</li>
+      <li nz-menu-item>nav 3</li> -->
+    </ul>
+  </nz-header>
+  <nz-layout>
+    <nz-sider nzWidth="200px" nzTheme="light" nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0">
+      <ul nz-menu nzMode="inline" class="sider-menu">
+        <li  nz-menu-item ><a><i nz-icon nzType="border-inner" nzTheme="outline">Dashboard</i></a></li>
+        <li  nz-menu-item ><a>Planned Jobs</a></li>
+        <li  nz-menu-item ><a>Unscheduled Jobs</a></li>
+        <li  nz-menu-item ><a>Breakdown Jobs</a></li>
+        <li  nz-menu-item ><a>Jobplanner</a></li>
+        <li  nz-menu-item ><a>Postponed Jobs</a></li>
+        
+        <li nz-submenu nzTitle="Reports" nzIcon="laptop" style="margin-left:-21px;">
+          <ul style="margin-left:20px;">
+            <li nz-menu-item>Unplanned Reports</li>
+            <li nz-menu-item>Breakdownjob Reports</li>
+            <li nz-menu-item>Jobplanner Rreports</li>
+          </ul>
+        </li>
+
+        <li  nz-menu-item ><a>Analysis</a></li>
+        <li  nz-menu-item ><a>MDM</a></li>
+
+        <li nz-submenu nzTitle="Utilities" nzIcon="notification" style="margin-left:-21px;">
+          <ul style="margin-left:20px;">
+            <li nz-menu-item><a>Equipment Import</a></li>
+            <li nz-menu-item><a>Spare part Import</a></li>
+            <li nz-menu-item><a>Jobplan Import</a></li>
+            <li nz-menu-item><a>Vessel List</a>option10</li>
+          </ul>
+        </li>
+      </ul>
+    </nz-sider>
+    <nz-layout class="inner-layout">
+      <nz-breadcrumb>
+        <!-- <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+        <nz-breadcrumb-item>List</nz-breadcrumb-item>
+        <nz-breadcrumb-item>App</nz-breadcrumb-item> -->
+      </nz-breadcrumb>
+      <nz-content>Content
+        <router-outlet></router-outlet>
+        <br>
+        <i nz-icon nzType="play-circle" nzTheme="outline"></i>
+        <i nz-icon nzType="border-inner" nzTheme="outline">hai</i>
+        <br>
+        <i nz-icon nzType="vertical-align-bottom" nzTheme="outline">ss</i>
+        <i nz-icon nzType="vertical-align-bottom" nzTheme="outline"></i>
+        <!-- <app-add-equipment></app-add-equipment> -->
+      </nz-content>
+     
+    </nz-layout>
+  </nz-layout>
+</nz-layout>

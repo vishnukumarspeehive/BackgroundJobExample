@@ -1,0 +1,37 @@
+
+
+<div class="row" style="margin-bottom:15px;">
+  <div class="caption" style="color:#0E5679;font-weight:1000">
+          <i class="fa fa-cubes" style="color:#0E5679"></i>
+
+          IMPORT JOBPLAN
+      </div>
+      </div>
+      <button nz-button nzType="primary" nzSize="xx-large" (click)="file.click()" style="width: 30px;height:30px;margin-left: 95%;">
+  
+        <i nz-icon nzType="upload" nzTheme="outline"></i>  
+      </button>
+
+  <div class="d1" style="border-color:#0E5679;color:#0E5679;width: 40%;font-family: sans-serif;font-size: 12px;">
+      <div>
+         
+             <h3>Import Jobplan Wizard:</h3>
+  
+
+              <li>Make sure the file is<b>.xlsx</b>.</li>
+              <li>Import can take up to several minutes.</li>
+      </div>
+      </div>
+
+<div class="col-md-3">
+<input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files)" style="display:none;">
+
+</div>
+<div class="col-md-4">
+<span class="upload" *ngIf="progress > 0">
+  {{progress}}%
+</span>
+<span class="upload" *ngIf="message">
+  {{message}}
+</span>
+</div>

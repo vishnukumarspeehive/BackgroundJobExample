@@ -1,0 +1,31 @@
+<div>
+    <form  #f="ngForm" (ngSubmit)="onSubmit(f)" >
+    <table cellpadding="20">
+        <tr>
+            <td><input name="equipmentName" class="form-control"  placeholder="EquipmentName" ngModel></td>
+            <td><input name="equipmentCode" class="form-control"placeholder="equipmentCode" ngModel></td>
+            <td>
+                <select class="form-control" name="equipmentType" ngModel>
+               <option>EquipmenType</option>
+            </select>
+        </td>
+        <td><input name="saftylevel" class="form-control" placeholder="Saftyleavel"ngModel ></td>
+        </tr>
+
+        <tr>
+            <td><input name="flag" class="form-control" placeholder="flag" ngModel></td>
+            <td><input name="drawingumber" class="form-control" placeholder="drawingNumber"ngModel></td>
+            <td><input name="department" class="form-control" placeholder="department"ngModel ></td>
+            <td><input name="location" class="form-control" placeholder="location"ngModel></td>
+        </tr>    
+        <tr>
+            <td><input name="equipmetstatus" class="form-control" placeholder="equipmentstatus"ngModel ></td>
+            <td><input name=vessel class="form-control" placeholder=vessel ngModel></td>
+            <td><input name="Remark" class="form-control" placeholder="Remark"ngModel ></td>
+           
+        </tr>    
+    </table>
+<button class="btn btn-primary" type="submit">add</button>
+    </form>
+
+</div>

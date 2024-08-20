@@ -1,0 +1,77 @@
+<div nz-row>
+    <div nz-col nzSpan="18"></div>
+    <div nz-col nzSpan="6">
+        <button nz-button nzType="default" (click)="postponeJob()">Postpone</button>&nbsp;&nbsp;
+        <button  nz-button nzType="default" (click)="completeJob()">Complete</button>
+        
+    </div>
+  </div>
+
+<br>
+<nz-table #sortTable [nzData]="unscheduledJob" nzTableLayout="fixed">
+    <thead>
+      <tr>
+        <th *ngFor="let column of listOfColumn" [nzSortFn]="column.compare" [nzSortPriority]="column.priority">{{ column.title }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of sortTable.data" (click)="selectJob(data)">
+        <td>{{ data.jobTitle }}</td>
+        <td>{{ data.equipmentName }}</td>
+        <td>{{ data.lastDoneDate }}</td>
+        <td>{{ data.nextDueDate }}</td>
+        <td>{{ data.interval}}</td>
+        <td>{{ data.jobOrder}}</td>
+        <td>{{ data.dueHrs}}</td>
+        <td>{{ data.assignedTo}}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+
+<!--model  start-->
+<nz-modal [(nzVisible)]="isVisible" nzTitle="{{title}}" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()"
+style="color: #0E5679;">
+    <ng-container *nzModalContent>
+       <form >
+        <div nz-row>
+            <div nz-col nzSpan="24">
+            <span>JobOrder</span>
+            <input nz-input  nzSize="large" value="{{jobCode}}" disabled >
+            </div>
+        </div>
+        <div nz-row>
+            <div nz-col nzSpan="24">
+            <span>Equipment Name</span>
+            <input nz-input  nzSize="large" value="{{equipmentName}}" disabled>
+            </div>
+        </div>
+        <div nz-row>
+            <div nz-col nzSpan="24">
+            <span>JobTitle</span>
+            <input nz-input  nzSize="large" value="{{jobTitle}}"  disabled>
+            </div>
+        </div>
+        <div nz-row>
+            <div nz-col nzSpan="24">
+            <span>Vessel</span>
+            <input nz-input  nzSize="large" value="{{vessel}}"  disabled>
+            </div>
+        </div>
+        <div nz-row>
+            <div nz-col nzSpan="24">
+            <span>Job Reported Date</span>
+            <br>
+            <nz-date-picker [(ngModel)]="date" (ngModelChange)="onChange($event)"></nz-date-picker>
+            </div>
+        </div>
+        <div nz-row>
+            <div nz-col nzSpan="24">
+            <span>Remark</span>
+            <textarea rows="4" nz-input [(ngModel)]="inputValue"></textarea>
+            </div>
+        </div>
+       
+       </form>
+    </ng-container>
+  </nz-modal>
+  <!--model end-->

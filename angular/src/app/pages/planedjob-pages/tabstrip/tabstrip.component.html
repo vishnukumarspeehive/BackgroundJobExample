@@ -1,0 +1,38 @@
+
+
+ <nz-tabset>
+  <nz-tab nzTitle="General">
+    <app-general></app-general>
+  </nz-tab>
+  <nz-tab nzTitle="Job plan">
+    <app-jobplan></app-jobplan>
+  </nz-tab>
+  <nz-tab nzTitle="Spare part">
+    <app-sparepart></app-sparepart>
+  </nz-tab>
+</nz-tabset>
+
+<!-- <nz-tabset  nzLinkRouter>
+    <nz-tab nzTitle="General">
+    <app-general></app-general>
+    </nz-tab>
+    <nz-tab nzTitle="Job plan">
+      <app-jobplan></app-jobplan>
+    </nz-tab>
+    <nz-tab >
+   
+    <a *nzTabLink nz-tab-link [routerLink]="['.']">Spare part</a>
+     <app-sparepart></app-sparepart>
+    </nz-tab>
+    </nz-tabset> -->
+   
+    <!-- <div class="tab">
+      <button nz-button nzType="default" class="tablinks" (click)="onTabClick(0)">General</button>
+      <button  nz-button nzType="default" class="tablinks" (click)="onTabClick(1)">JobPlan</button>
+      <button  nz-button nzType="default"  class="tablinks" (click)="onTabClick(2)">Sparepart</button>  
+      </div>
+    <div>
+      <app-general  *ngIf="tabIndex === 0"></app-general>
+      <app-jobplan  *ngIf="tabIndex === 1"></app-jobplan>
+      <app-sparepart  *ngIf="tabIndex === 2"></app-sparepart>
+    </div> -->

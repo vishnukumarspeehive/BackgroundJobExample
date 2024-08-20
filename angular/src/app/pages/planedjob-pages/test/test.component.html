@@ -1,0 +1,49 @@
+<p>test works!</p>
+<h1>Uploads works</h1>
+<div class="row" style="margin-bottom:15px;">
+  <div class="col-md-3">
+    <input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files)" style="display:none;">
+    <button type="button" class="btn btn-success" (click)="file.click()">Upload File</button>
+  </div>
+  <div class="col-md-4">
+    <span class="upload" *ngIf="progress > 0">
+      {{progress}}%
+    </span>
+    <span class="upload" *ngIf="message">
+      {{message}}
+    </span>
+  </div>
+</div>
+
+
+
+
+
+
+
+<button nz-button [nzType]="'primary'" (click)="showModal()"><span>Show Modal</span></button>
+
+
+<nz-modal
+[(nzVisible)]="isVisible"
+[nzTitle]="modalTitle"
+[nzContent]="modalContent"
+[nzFooter]="modalFooter"
+(nzOnCancel)="handleCancel()"
+>
+<ng-template #modalTitle>Custom Modal Title</ng-template>
+
+<ng-template #modalContent>
+  <p>Modal Content</p>
+  <p>Modal Content</p>
+  <p>Modal Content</p>
+  <p>Modal Content</p>
+  <p>Modal Content</p>
+</ng-template>
+
+<ng-template #modalFooter>
+  <span>Modal Footer:</span>
+  <button nz-button nzType="default" (click)="handleCancel()">Custom Callback</button>
+  <button nz-button nzType="primary" (click)="handleOk()" [nzLoading]="isConfirmLoading">Custom Submit</button>
+</ng-template>
+</nz-modal>

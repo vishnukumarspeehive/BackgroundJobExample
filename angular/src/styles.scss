@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~ng-zorro-antd/ng-zorro-antd.compact.css";
+
+svg {
+    vertical-align: unset !important;
+  }
+
+// @import "~ng-zorro-antd/style/index.min.css"; 
+// @import "~ng-zorro-antd/tabs/style/index.min.css"; 
+// @import "~ng-zorro-antd/tree/style/index.min.css"; 
+// @import "~ng-zorro-antd/layout/style/index.min.css";
+// @import "~ng-zorro-antd/select/style/index.min.css";  
+// @import "~ng-zorro-antd/upload/style/index.min.css";
+// @import "~ng-zorro-antd/table/style/index.min.css";
+// @import "~ng-zorro-antd/radio/style/index.min.css";
+// @import "~ng-zorro-antd/modal/style/index.min.css";
+// @import "~ng-zorro-antd/button/style/index.min.css";
+// @import "~ng-zorro-antd/menu/style/index.min.css";
+// @import "~ng-zorro-antd/slider/style/index.min.css";
+// @import "~ng-zorro-antd/icon/style/index.min.css";
+// @import "~ng-zorro-antd/grid/style/index.min.css";
+// @import "~ng-zorro-antd/input/style/index.min.css";
+// @import "~ng-zorro-antd/date-picker/style/index.min.css";
+/* Import styles of the component */
+//@import "~ng-zorro-antd/breadcrumb/style/index.min.css";
+//@import "~ng-zorro-antd/footer/style/index.min.css";
+
+// @keyframes donut-spin {
+//   0% {
+//     transform: rotate(0deg);
+//   }
+//   100% {
+//     transform: rotate(360deg);
+//   }
+// }
+// .donut {
+//   display: inline-block;
+//   border: 4px solid rgba(0, 0, 0, 0.1);
+//   border-left-color: #7983ff;
+//   border-radius: 50%;
+//   width: 30px;
+//   height: 30px;
+//   animation: donut-spin 1.2s linear infinite;
+
+//   &.centered {
+//     position: fixed;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//   }
+// }
+
+html, 
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+padding: 0px;
+margin: 0px;
+}

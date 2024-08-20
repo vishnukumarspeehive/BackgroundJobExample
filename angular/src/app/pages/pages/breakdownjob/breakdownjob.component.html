@@ -1,0 +1,138 @@
+<div class="card">
+  <div class="card-header">
+    <div class="row">
+      <div class="col col-md-6">
+
+      </div>
+      <div class="text-right col col-md-6">
+        <div class="text-lg-right pt-2">
+          <button id="create" nz-button nzType="primary" nzSize="small" (click)="createBreakdownJob()"
+            nzTooltipTitle="ADD" nzTooltipPlacement="topRight" nz-button nz-tooltip>
+            <i class="fa fa-plus mr-1"></i>
+
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <ngx-datatable [rows]="breakdownJob.items" [count]="breakdownJob.totalCount" [list]="list" default>
+      <ngx-datatable-column [name]="'::Actions' | abpLocalization" [maxWidth]="150" [sortable]="false">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+
+          <button nz-button nzType="primary" nzSize="small" (click)="editBreakdownJob(row.id)" nzTooltipTitle="EDIT"
+            nzTooltipPlacement="topRight" nz-button nz-tooltip><i nz-icon nzType="edit"></i></button>
+          <button nz-button nzType="primary" nzSize="small" (click)="delete(row.id)" nzTooltipTitle="DELETE"
+            nzTooltipPlacement="topRight" nz-button nz-tooltip> <i nz-icon nzType="close"></i></button>
+
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column [name]="'::EquipmentName' | abpLocalization" prop="equipmentName"></ngx-datatable-column>
+      <ngx-datatable-column [name]="'::JobOrder' | abpLocalization" prop="jobOrder">
+      </ngx-datatable-column>
+      <ngx-datatable-column [name]="'::Title' | abpLocalization" prop="title">
+      </ngx-datatable-column>
+      <ngx-datatable-column [name]="'::JobReportedDate' | abpLocalization" prop="jobReportedDate">
+      </ngx-datatable-column>
+      <ngx-datatable-column [name]="'::ReportedBy' | abpLocalization" prop="reportedBy">
+      </ngx-datatable-column>
+      <ngx-datatable-column [name]="'::Status' | abpLocalization" prop="status">
+      </ngx-datatable-column>
+      <ngx-datatable-column [name]="'::Vessel' | abpLocalization" prop="vessel">
+      </ngx-datatable-column>
+      <ngx-datatable-column [name]="'::JobCompletedDate' | abpLocalization" prop="jobCompletedDate">
+      </ngx-datatable-column>
+      <ngx-datatable-column [name]="'::Remark' | abpLocalization" prop="remark">
+
+
+      </ngx-datatable-column>
+
+    </ngx-datatable>
+  </div>
+</div>
+<abp-modal [(visible)]="isModalOpen">
+  <ng-template #abpHeader>
+    <h3>{{ '::NewbreakdownJob' | abpLocalization }}</h3>
+  </ng-template>
+
+  <ng-template #abpBody>
+
+    <form [formGroup]="form" (ngSubmit)="save()">
+      <div class="form-group">
+        <label for="breakdownJob-equipmentName">Equipment Name</label><span> * </span>
+        <input type="text" id="breakdownJob-equipmentName" class="form-control" formControlName="equipmentName"
+          autofocus />
+      </div>
+
+      <div class="form-group">
+        <label for="breakdownJob-jobOrder">JobOrder</label><span> * </span>
+        <input type="text" id="breakdownJob-jobOrder" class="form-control" formControlName="jobOrder" />
+      </div>
+
+      <div class="form-group">
+        <label for="breakdownJob-title">Title</label><span> * </span>
+        <input type="text" id="breakdownJob-title" class="form-control" formControlName="title" />
+      </div>
+      <div class="form-group">
+        <label for="breakdownJob-jobReportedDate">JobReportedDate</label><span> * </span>
+        <input type="date" id="breakdownJob-jobReportedDate" class="form-control" formControlName="jobReportedDate" />
+      </div>
+      <div class="form-group">
+        <label for="breakdownJob-reportedBy">ReportedBy</label><span> * </span>
+        <select class="form-control" id="breakdownJob-reportedBy"  formControlName="reportedBy">
+            <option [ngValue]="null">ReportedBy</option>
+            <option [ngValue]>2 nd engineer</option>
+            <option [ngValue]>Chief engineer</option>
+            <option [ngValue]>2 nd Officer</option>
+            <option [ngValue]>3 nd Officer</option>
+             <!--option [ngValue]="breakdownJob-reportedBy">
+                      {{ reportedBy.name }}
+                    </option-->
+              <!--input type="text" id="breakdownJob-reportedBy" class="form-control" formControlName="reportedBy" /-->
+            </select>
+            
+      </div>
+      <div class="form-group">
+        <label for="breakdownJob-status">Status</label><span> * </span>
+              <select class="form-control" id="breakdownJob-status" class="form-control" formControlName="status">
+                  <option [ngValue]="null">Status</option>
+                  <option [ngValue]> COMPLETE</option>
+                  <option [ngValue]>PENDING</option>
+                  <option [ngValue]>IN PROGRESS</option>
+                 
+                  
+              <!--input type="text" id="breakdownJob-status" class="form-control" formControlName="status" /-->
+                <!--option [ngValue]="breakdownJob-status">
+                      {{status.name }}
+                    </option-->
+            </select>
+      </div>
+      <div class="form-group">
+        <label for="breakdownJob-vessel">Vessel</label><span> * </span>
+        <input type="text" id="breakdownJob-vessel" class="form-control" formControlName="vessel" />
+      </div>
+      <div class="form-group">
+        <label for="breakdownJob-jobCompletedDate">JobCompletedDate</label><span> * </span>
+        <input type="date" id="breakdownJob-jobCompletedDate" class="form-control" formControlName="jobCompletedDate" />
+      </div>
+      <div class="form-group">
+        <label for="breakdownJob-remark">Remark</label><span> * </span>
+        <input type="text" id="breakdownJob-remark" class="form-control" formControlName="remark" />
+      </div>
+    </form>
+
+
+  </ng-template>
+
+  <ng-template #abpFooter>
+    <button nz-button nzType="primary" nzSize="small" #abpClose>
+      <i nz-icon nzType="close"></i>
+    </button>
+
+    <!--added save button-->
+    <button nz-button nzType="primary" nzSize="small" (click)="save()" [disabled]="form.invalid">
+      <i nz-icon nzType="save"></i>
+    </button>
+  </ng-template>
+
+</abp-modal>

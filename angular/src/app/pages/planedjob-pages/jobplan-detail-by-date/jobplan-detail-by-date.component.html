@@ -1,0 +1,298 @@
+<form  #f="ngForm" (ngSubmit)="onSubmit(f)" >
+    <div nz-row [nzGutter]="{ xs: 4, sm: 8, md: 12, lg: 16 }">
+      <div nz-col class="gutter-row" [nzSpan]="6">
+        
+        Job order
+        <div class="inner-box">
+         <input nz-input id="JobOrder2"   ngModel name="JobOrder2" value="" class="inputsize"/>
+        </div>
+      </div>
+      
+      <div nz-col class="gutter-row" [nzSpan]="6" style="padding-left: 11px;
+      padding-right: 8px;">
+        Equipment name
+        <div class="inner-box" style="padding-left: 5px;
+        padding-right: 8px;">
+
+          <input nz-input id="editEname" readonly value="{{equipment.sub1Description}}" class="inputsize" />
+       </div>
+      </div>
+      <div nz-col class="gutter-row" [nzSpan]="6" style="padding-left: 11px;
+      padding-right: 8px;">
+        Equipment code
+        <div class="inner-box" style="padding-left: 7px;
+        padding-right: 8px;">
+
+          <input nz-input id="editECode" readonly value="{{equipment.sub1Number}}" class="inputsize" style="padding-left: 12px;
+          padding-right: 8px;"/>
+      </div>
+    </div>
+      <div nz-col class="gutter-row" [nzSpan]="6" style="padding-left: 11px;
+      padding-right: 8px;">
+        Job Title
+        <div class="inner-box" style="padding-left: 10px;
+        padding-right: 8px;">
+
+          <input nz-input id="editJobTitle" name="JobTitle" value="{{selectedJobplan.jobTitle}}" class="inputsize"/>
+      </div>
+    </div>
+    </div>
+    
+    
+    <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+        <div nz-col class="gutter-row" [nzSpan]="6">
+          Rank
+          <div class="inner-box">
+  
+           <ng-container *ngFor="let position of listOfPosition">
+        <button nz-button nz-dropdown [nzDropdownMenu]="menu" [nzPlacement]="position" class="inputsize">Select Rank</button>
+        <nz-dropdown-menu #menu="nzDropdownMenu" id="Rank" value="">
+          <ul nz-menu>
+            <li nz-menu-item>1st menu item length</li>
+            <li nz-menu-item>2nd menu item length</li>
+            <li nz-menu-item>3rd menu item length</li>
+          </ul>
+        </nz-dropdown-menu>
+      </ng-container>
+         
+        </div>
+      </div>
+       <div nz-col class="gutter-row" [nzSpan]="6">
+          Priority
+          <div class="inner-box">
+  
+            <ng-container *ngFor="let position of listOfPosition">
+         <button nz-button nz-dropdown [nzDropdownMenu]="menu" [nzPlacement]="position" class="inputsize">Select Priority</button>
+         <nz-dropdown-menu #menu="nzDropdownMenu" id="Priority" value="">
+           <ul nz-menu>
+             <li nz-menu-item>1st menu item length</li>
+             <li nz-menu-item>2nd menu item length</li>
+             <li nz-menu-item>3rd menu item length</li>
+           </ul>
+         </nz-dropdown-menu>
+       </ng-container>
+                  </div>
+      </div>
+      <div nz-col class="gutter-row" [nzSpan]="6">
+        Last done date
+        <div class="inner-box">
+
+          <input type="date" ngModel id="lastdone" name="lastdone" value="" class="inputsize" placeholder="">
+                     
+      </div>
+    </div>
+    <div nz-col class="gutter-row" [nzSpan]="6">
+      Next due date
+      <div class="inner-box">
+
+        <input nz-input id="NextDueDate" readonly value="" class="inputsize"/>
+    </div>
+  </div>
+     </div>
+      
+      
+      
+        
+      <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+        <div nz-col class="gutter-row" [nzSpan]="6">
+          Plan Horizon
+          <div class="inner-box">
+  
+            <input nz-input id="editPlanHorizon" name="PlanHorizon" value="" class="inputsize"/>
+        </div>
+      </div>
+        <div nz-col class="gutter-row" [nzSpan]="6">
+          Frequency Type
+          <div class="inner-box">
+  
+           <ng-container *ngFor="let position of listOfPosition">
+        <button nz-button nz-dropdown [nzDropdownMenu]="menu" [nzPlacement]="position" class="inputsize">Select Frequency Type</button>
+        <nz-dropdown-menu #menu="nzDropdownMenu">
+          <ul nz-menu>
+            <li nz-menu-item>1st menu item length</li>
+            <li nz-menu-item>2nd menu item length</li>
+            <li nz-menu-item>3rd menu item length</li>
+          </ul>
+        </nz-dropdown-menu>
+      </ng-container>
+         
+        
+        </div>
+      </div>
+        <div nz-col class="gutter-row" [nzSpan]="6">
+          Frequency
+          <div class="inner-box">
+  
+            <ng-container *ngFor="let position of listOfPosition">
+         <button nz-button nz-dropdown [nzDropdownMenu]="menu" [nzPlacement]="position" class="inputsize">Select Frequency</button>
+         <nz-dropdown-menu #menu="nzDropdownMenu" id="Frequency" value="">
+           <ul nz-menu>
+             <li nz-menu-item>1st menu item length</li>
+             <li nz-menu-item>2nd menu item length</li>
+             <li nz-menu-item>3rd menu item length</li>
+           </ul>
+         </nz-dropdown-menu>
+       </ng-container>
+          
+        </div>
+      </div>
+        <div nz-col class="gutter-row" [nzSpan]="6">
+          Frequency type
+          <div class="inner-box">
+  
+            <ng-container *ngFor="let position of listOfPosition">
+         <button nz-button nz-dropdown [nzDropdownMenu]="menu" [nzPlacement]="position" class="inputsize">Select frequency</button>
+         <nz-dropdown-menu #menu="nzDropdownMenu" id="FrequencyType" value="">
+           <ul nz-menu>
+             <li nz-menu-item>1st menu item length</li>
+             <li nz-menu-item>2nd menu item length</li>
+             <li nz-menu-item>3rd menu item length</li>
+           </ul>
+         </nz-dropdown-menu>
+       </ng-container>
+          
+        </div>
+      </div>
+    </div>
+  
+  
+    
+    
+    
+      
+    <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+      <div nz-col class="gutter-row" [nzSpan]="6">
+        Interval
+        <div class="inner-box">
+
+          <input nz-input id="" name="" value="" class="inputsize"/>
+      </div>
+    </div>
+    <div nz-col class="gutter-row" [nzSpan]="6">
+      Frequency type
+      <div class="inner-box">
+
+        <ng-container *ngFor="let position of listOfPosition">
+     <button nz-button nz-dropdown [nzDropdownMenu]="menu" [nzPlacement]="position" class="inputsize">Select Frequency type</button>
+     <nz-dropdown-menu #menu="nzDropdownMenu">
+       <ul nz-menu>
+         <li nz-menu-item>1st menu item length</li>
+         <li nz-menu-item>2nd menu item length</li>
+         <li nz-menu-item>3rd menu item length</li>
+       </ul>
+     </nz-dropdown-menu>
+   </ng-container>
+      
+    </div>
+  </div>
+      <div nz-col class="gutter-row" [nzSpan]="6" >
+        Previous Rhs
+        <div class="inner-box">
+
+          <input nz-input id="" name="" value="" class="inputsize" />
+      
+      </div>
+    </div>
+      <div nz-col class="gutter-row" [nzSpan]="6">
+        Current Rhs
+        <div class="inner-box">
+
+          <input nz-input id="" name="" value="" class="inputsize"/>
+      </div>
+    </div>
+     
+  </div>
+  
+    
+      <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+        <div nz-col class="gutter-row" [nzSpan]="6">
+          Department
+          <div class="inner-box">
+  
+            <ng-container *ngFor="let position of listOfPosition">
+         <button nz-button nz-dropdown [nzDropdownMenu]="menu" [nzPlacement]="position" class="inputsize">Select Department</button>
+         <nz-dropdown-menu #menu="nzDropdownMenu">
+           <ul nz-menu>
+             <li nz-menu-item>1st menu item length</li>
+             <li nz-menu-item>2nd menu item length</li>
+             <li nz-menu-item>3rd menu item length</li>
+           </ul>
+         </nz-dropdown-menu>
+       </ng-container>
+          
+        
+        </div>
+      </div>
+      <div nz-col class="gutter-row" [nzSpan]="6">
+        Maintenance Type
+        <div class="inner-box">
+
+           <ng-container *ngFor="let position of listOfPosition">
+        <button nz-button nz-dropdown [nzDropdownMenu]="menu" [nzPlacement]="position" class="inputsize">Select Maintenance Type</button>
+        <nz-dropdown-menu #menu="nzDropdownMenu">
+          <ul nz-menu>
+            <li nz-menu-item>1st menu item length</li>
+            <li nz-menu-item>2nd menu item length</li>
+            <li nz-menu-item>3rd menu item length</li>
+          </ul>
+        </nz-dropdown-menu>
+      </ng-container>
+         
+      
+      </div>
+      
+    </div>
+    <div nz-col class="gutter-row" [nzSpan]="6">
+      Jobtype
+      <div class="inner-box">
+
+        <ng-container *ngFor="let position of listOfPosition">
+     <button nz-button nz-dropdown [nzDropdownMenu]="menu" [nzPlacement]="position" class="inputsize">Select Jobtype</button>
+     <nz-dropdown-menu #menu="nzDropdownMenu" id="Job_Type" value="">
+       <ul nz-menu>
+         <li nz-menu-item>1st menu item length</li>
+         <li nz-menu-item>2nd menu item length</li>
+         <li nz-menu-item>3rd menu item length</li>
+       </ul>
+     </nz-dropdown-menu>
+   </ng-container>
+      
+    </div>
+  </div>
+    <div nz-col class="gutter-row" [nzSpan]="6">
+      AssignedTo
+      <div class="inner-box">
+
+        <ng-container *ngFor="let position of listOfPosition">
+     <button nz-button nz-dropdown [nzDropdownMenu]="menu" [nzPlacement]="position" class="inputsize">Select AssignedTo</button>
+     <nz-dropdown-menu #menu="nzDropdownMenu" id="AssignedTo" value="" >
+       <ul nz-menu>
+         <li nz-menu-item>1st menu item length</li>
+         <li nz-menu-item>2nd menu item length</li>
+         <li nz-menu-item>3rd menu item length</li>
+       </ul>
+     </nz-dropdown-menu>
+   </ng-container>
+      
+    </div>
+  </div>
+  
+       
+      </div>
+      
+      <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+        <div nz-col class="gutter-row" [nzSpan]="6">
+          Job Description
+          <div class="inner-box">
+  
+            <input nz-input id="editJobDescription" name="JobDescription" value="" class="inputsize" style="width: 535px;height: 180px;"/>
+           
+          </div>
+      </div>
+        
+    </div>
+  
+    <input type="submit"  class="fa fa-floppy-o aria-hidden=true" style="height:33px;background:#0E5679;color:white;margin-left: 95%;" id="submit" />
+  
+     
+    </form>

@@ -1,0 +1,128 @@
+
+// .content{
+//     position: relative;
+//     margin-left:20%;
+//     top: -650px;
+
+//     }
+//     .left{
+//      float: left;
+//      width:25%;
+     
+
+//     }
+
+//     .right{
+//   display: inline;
+//   margin-left: 50%;
+//     }
+
+.logo {
+  width: auto;
+  height: auto;
+  /* background: rgba(255, 255, 255, 0.2); */
+  /* margin: 16px 30px 16px 0; */
+  margin-top: -15px;
+  padding: 0px;
+  border-color: #0e5679;
+  background-color: white;
+  margin-left: -40px;
+
+}
+.navbar-brand{
+  font-size: 22px;
+  color:#0e5679;
+  background-color: white;
+
+}
+.header-menu {
+  line-height: 64px;
+  background-color: white;
+}
+.resizable {
+  border: dashed 1px #CCC; 
+  width: 120px; 
+  height: 420px; 
+  padding: 5px; 
+  margin: 5px; 
+  cursor: move; 
+  float: left 
+}
+a{
+     
+  color:#0e5679;
+  background-color: white;
+  font-size: 12px;
+  
+}
+ 
+nz-sider{
+  height: 100vh;
+
+}
+
+.sider-menu {
+ height: 100vh;
+  border-right: 0;
+  color: #0e5679;
+  background: #fff;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.inner-layout {
+  padding: 0 24px 24px;
+ 
+}
+
+nz-breadcrumb {
+  margin: 16px 0;
+ 
+}
+
+nz-content {
+  background: #fff;
+  padding: 24px;
+  min-height: 280px;
+  
+}
+.ant-layout-header{
+  background-color: white;
+}
+li.ant-menu-item{
+  color: #0e5679;
+  background: #fff;
+}
+
+
+
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+  width: 200px;
+}
+
+.trigger:hover {
+  color: #1890ff;
+}
+h3{
+    
+
+  color:#0e5679;
+  background-color: white;
+  position: relative;margin-left: 80%;
+  margin-top: -40px;
+}
+.left
+{
+float: left;
+width:25%;  
+}
+.right
+{
+display: inline;
+margin-left: 50%;
+ }

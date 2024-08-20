@@ -1,0 +1,33 @@
+[nz-button] {
+    margin-right: 8px;
+    margin-bottom: 12px;
+    background-color:#0e5679;
+  }
+
+  nz-button-group [nz-button] {
+    margin-right: 0;
+  }
+  .btn-primary{
+    background-color:#0e5679;
+  }
+  .form-control{
+    font-size: 12px;
+    color: #0e5679;
+    font-family: sans-serif;
+  }
+  ngx-datatable{
+    font-size: 12px;
+    color: #0e5679;
+    font-family: sans-serif;
+  
+  }
+  span{
+    color: red;
+  }
+  label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: 12px;
+    color: #0e5679;
+    font-family: sans-serif;
+  }

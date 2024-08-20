@@ -1,0 +1,15 @@
+<nz-layout >
+    <app-header></app-header>
+    <nz-layout>
+      <nz-sider nzWidth="200px" nzTheme="light" nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0">   
+       <app-side-nav></app-side-nav>
+      </nz-sider>
+      <nz-layout class="inner-layout">
+        <nz-breadcrumb>
+        </nz-breadcrumb>
+        <nz-content>
+        <app-vessel-list></app-vessel-list>
+        </nz-content>
+      </nz-layout>
+    </nz-layout>
+  </nz-layout>

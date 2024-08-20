@@ -1,0 +1,28 @@
+
+<table class="table table-sm" id="jobplanHistory" style="color:#0e5679;">
+    <thead>
+        <tr>
+
+            <td scope="col" style="background-color:#0e5679;color:white;">Job Order</td>
+            <td scope="col" style="background-color:#0e5679;color:white;">Job TiTle</td>
+            <td scope="col" style="background-color:#0e5679;color:white;">Job Completed Date</td>
+            <td scope="col" style="background-color:#0e5679;color:white;">Next due Date</td>
+            <td scope="col" style="background-color:#0e5679;color:white;">Due Hrs</td>
+            <td scope="col" style="background-color:#0e5679;color:white;">Status</td>
+            <td scope="col" style="background-color:#0e5679;color:white;">Job Type</td>
+            <td scope="col" style="background-color:#0e5679;color:white;">Remark</td>
+
+        </tr>
+    </thead>
+    <tbody id="jobplanHistoryBody">
+       <tr *ngFor="let item of historyList">
+        <td>{{item.jobOrder}}</td>
+        <td>{{item.jobTitle}}</td>
+        <td>{{item.jobOrder}}</td>
+        <td>{{item.jobOrder}}</td>
+        <td>{{item.jobOrder}}</td>
+        <td>{{item.jobOrder}}</td>
+        <td>{{item.status}}</td>
+       </tr>
+    </tbody>
+</table>

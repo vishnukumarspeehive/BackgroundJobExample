@@ -1,0 +1,83 @@
+[nz-button] {
+  margin-right: 5px;
+  // margin-bottom: 12px;
+  background-color:#0e5679;
+}
+
+nz-button-group [nz-button] {
+  margin-right: 0;
+}
+.btn-primary{
+  background-color:#0e5679;
+}
+
+ngx-datatable-column{
+  width: 300px;
+  font-size: 12px;
+  color: #0e5679;
+  font-family: sans-serif;
+}
+nz-modal{
+  color: #0e5679;
+}
+
+.nzTitle{
+  color: #0e5679;
+}
+ng-template{
+  width: 300px;
+}
+.d1{
+  width: 900px;
+  height: 800px;
+  color: red;
+  
+}
+.tab{
+  height: 80%;
+}
+.tablinks{
+  
+  color :white;
+  width: 100px;
+  background-color: #0e5679;
+  height: 50px;
+  border-color: white;
+  
+
+}
+button{
+  //border: none;
+  color :white;
+  background-color: #0e5679;
+ // width: 200px;
+ // height: 100px;
+}
+h5{
+  font-weight: 900;
+  font-size: larger;
+  color: #0e5679;
+}
+
+.jpbutton{
+border-radius: 5px; 
+font-size: 16px;
+}
+.radlable{
+  font-weight: bold;
+}
+label {
+  display: inline-block;
+  margin-bottom: .5rem;
+  font-size: 12px;
+  color: #0e5679;
+  font-family: sans-serif;
+}
+.form-control{
+  font-size: 12px;
+  color: #0e5679;
+  font-family: sans-serif;
+}
+span{
+  color: red;
+}

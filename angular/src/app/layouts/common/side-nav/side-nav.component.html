@@ -1,0 +1,25 @@
+<ul nz-menu nzMode="inline" class="sider-menu">  
+    <li style="margin-bottom: 15px;font-size:5px;" nz-menu-item ><a  [routerLink]="['/landing/dashboard']"><i class="iclass" nz-icon nzType="appstore" nzTheme="outline" ></i><span>Dashboard</span></a></li>
+    <li style="margin-bottom: 15px;" nz-menu-item ><a (click)="loadPlanedJob()"><i class="iclass" nz-icon nzType="appstore" nzTheme="outline"></i><span class="title">Planned Jobs</span></a></li>
+    <li style="margin-bottom: 15px;" nz-menu-item ><a (click)="loadUnscheduledJob()"><i class="iclass" nz-icon nzType="appstore" nzTheme="outline" ></i><span class="title" title="Unscheduled Jobs">Unscheduled Jobs</span></a></li>
+    <li style="margin-bottom: 15px;" nz-menu-item ><a  (click)="loadBreakdownJob()"><i class="iclass" nz-icon nzType="appstore" nzTheme="outline"  ></i><span class="title">Breakdown Jobs</span></a></li>
+    <li style="margin-bottom: 15px;" nz-menu-item ><a (click)="loadDueJob()"><i class="iclass" nz-icon nzType="appstore" nzTheme="outline"  ></i><span class="title">Jobplanner</span></a></li>
+    <li style="margin-bottom: 15px;" nz-menu-item ><a (click)="loadPostponedJob()"><i class="iclass" nz-icon nzType="appstore" nzTheme="outline"  ></i><span class="title">Postponed Jobs</span></a></li>
+    <li style="margin-bottom: 15px;" nz-menu-item ><a (click)="loadPlanedJob()"><i class="iclass" nz-icon nzType="appstore" nzTheme="outline"  ></i><span class="title">Analysis</span></a></li>
+    <li style="margin-bottom: 15px;" nz-menu-item ><a (click)="loadmdm()"><i class="iclass" nz-icon nzType="appstore" nzTheme="outline"  ></i><span class="title">MDM</span></a></li>
+    <li style="margin-bottom: 15px;font-size:13px;font-family: sans-serif;" nz-submenu nzTitle="Utilities">
+      <ul>
+        <li style="padding-left: 27px;margin-top: 10px;"><a [routerLink]="['/landing/importEquipments']"><i class="iclass" nz-icon nzType="appstore" nzTheme="outline"  ></i>Equipment Import</a></li>
+        <li style="padding-left: 27px;margin-top: 10px;"><a [routerLink]="['/landing/importSparepart']"><i class="iclass" nz-icon nzType="appstore" nzTheme="outline"  ></i>Spare part Import</a></li>
+        <li style="padding-left: 27px;margin-top: 10px;"><a [routerLink]="['/landing/importJobplan']"><i class="iclass" nz-icon nzType="appstore" nzTheme="outline"  ></i>Jobplan Import</a></li>
+        <li style="padding-left: 27px;margin-top: 10px;"><a [routerLink]="['/landing/addVessel']"><i class="iclass" nz-icon nzType="appstore" nzTheme="outline"  ></i>Vessel List</a></li>
+      </ul>
+    </li>       
+    <li style="margin-bottom: 15px;font-size:13px;font-family: sans-serif;" nz-submenu nzTitle="Reports">
+      <ul>
+        <li style="padding-left: 27px;margin-top: 10px;" nz-menu-item><i class="iclass" nz-icon nzType="appstore" nzTheme="outline"  ></i>Unplanned Reports</li>
+        <li style="padding-left: 27px;margin-top: 10px;" nz-menu-item title="Breakdown Job Reports"><i class="iclass" nz-icon nzType="appstore" nzTheme="outline" title="Breakdown Job Reports" ></i>Breakdown Job Reports</li>
+        <li style="padding-left: 27px;margin-top: 10px;" nz-menu-item><i class="iclass" nz-icon nzType="appstore" nzTheme="outline"  ></i>Jobplanner Reports</li>
+      </ul>
+    </li>
+  </ul>

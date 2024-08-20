@@ -1,0 +1,75 @@
+<nz-page-header>
+    <nz-page-header-title>
+        <nz-layout>
+          
+      <nz-sider nzCollapsible nzWidth="250px">
+        <div class="nz-sider"></div>
+       <br>
+        <br> <p>Maintenance</p> 
+        <br>
+        <br>
+        <h3>
+        <li> 
+            <a href="#"><i class="fa fa-bookmark-o" aria-hidden="true"></i>   Dashboard</a><br><br>
+
+        </li>
+        <li>
+            <a [routerLink]="['/planedJob']"><i class="fa fa-bookmark-o" aria-hidden="true"></i> Planned Job</a><br><br>
+        </li>
+        <li>
+            
+            <a  [routerLink]="['/landing/breakdown']"><i class="fa fa-bookmark-o" aria-hidden="true"></i> Breakdown Job</a><br><br>
+        </li>
+        <li>
+            <a  [routerLink]="['/landing/unscheduledJob']"><i class="fa fa-bookmark-o" aria-hidden="true"></i> Unscheduled Job</a><br><br>
+        </li>
+        <li>
+            <a href="#"><i class="fa fa-bookmark-o" aria-hidden="true"></i> Job Planner</a><br><br>
+        </li>
+        <li>
+            <a href="#"><i class="fa fa-bookmark-o" aria-hidden="true"></i> Postponed Jobs</a><br><br>
+        </li>
+        <li>
+            <a  [routerLink]="['/mdm']"><i class="fa fa-bookmark-o" aria-hidden="true"></i> MDM</a><br><br>
+        </li>
+      </h3>
+
+
+        <ul nz-menu nzTheme="light"  nzSize="small" nzMode="inline">
+            <h3>
+          <li nz-submenu  nzOpen nzTitle="Report"  >
+              
+                
+            <ul>
+              <li nz-menu-item ><h3> <a href="#">Job planner Reports</a></h3></li>
+              <li nz-menu-item ><h3><a href="#">Unsheduled Job Reports</a></h3></li>
+              <li nz-menu-item><h3> <a href="#">Breakdown Job Reports</a></h3></li>
+            </ul>
+          </li>
+        </h3>
+        <h3>
+          <li nz-submenu  nzTheme="light"nzSize="small" nzMode="inline" nzOpen nzTitle=" Utilities" >
+              <i class="fa mr-2"></i>
+            <ul>
+              <li nz-menu-item>><h3><a href="#">Equipment Import</a></h3></li>
+              <li nz-menu-item>><h3> <a href="#">Job plan Import</a></h3></li>
+              <li nz-menu-item>><h3><a href="#">Add Vessel</a></h3></li>
+            </ul>
+          </li>
+        </h3>
+        </ul>
+      </nz-sider>
+      <nz-layout>
+        <nz-header></nz-header>
+        <nz-content>
+          <!--<nz-breadcrumb>
+            <nz-breadcrumb-item></nz-breadcrumb-item>
+            <nz-breadcrumb-item></nz-breadcrumb-item>
+          </nz-breadcrumb>-->
+          <div class="inner-content">
+            
+          </div>
+        </nz-content>
+        <nz-footer> By Angular</nz-footer>
+      </nz-layout>
+    </nz-layout>

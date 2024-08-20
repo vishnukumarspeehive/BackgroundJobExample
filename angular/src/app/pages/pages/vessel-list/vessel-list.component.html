@@ -1,0 +1,25 @@
+<nz-table >
+    <thead>
+        
+        
+    </thead>
+    <tbody>
+      <tr>
+        <td> <nz-input-group [nzSuffix]="suffixIconSearch">
+          <input type="text" nz-input placeholder="Search vessel" style="font-size: 12px;color:#0e5679;"/>
+        </nz-input-group>
+        <ng-template #suffixIconSearch>
+          <i nz-icon nzType="search"  style="font-size: 12px;color:#0e5679;"></i>
+        </ng-template>
+      </td>  
+      </tr>
+      <tr *ngFor="let data of vessel">
+        
+        <td style="width: 25%;">{{data.vesselName}}</td>
+        <td><button  nz-button nzType="primary" nzSize="small" (click)="selectedVessel(data.vesselName)">
+          <i nz-icon nzType="check"></i>
+        </button></td>
+      </tr>
+    </tbody>
+  </nz-table>
+

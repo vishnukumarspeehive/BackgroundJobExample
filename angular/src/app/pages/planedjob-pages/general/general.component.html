@@ -1,0 +1,85 @@
+
+
+<nz-divider nzOrientation="left" nzText=""></nz-divider>
+<!-- <div style="margin-left: 80%;">
+    <i nz-icon nzType="plus-square" nzTheme="outline" nzSize="small" style="font-size:12px;color: white;background-color: #0e5679;"></i>
+<i nz-icon nzType="delete" nzTheme="outline" nzSize="small" style="color: red;font-size:12px;"></i>
+<i nz-icon nzType="edit" nzTheme="outline" nzSize="small" style="font-size:12px;color: white;background-color: #0e5679;"></i>
+</div> -->
+<div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }" style="color:#0e5679">
+    <div nz-col class="gutter-row" [nzSpan]="6">
+        Equipment code
+        <div class="inner-box">
+             <input nz-input name="equipmentCode" placeholder="EquipmentCode" value="{{selectedEquipment.equipmentCode}}" />
+          </div>
+      </div>
+    
+  <div nz-col class="gutter-row" [nzSpan]="6">
+      Equipment name
+      <div class="inner-box">
+           <input nz-input name="equipmentName" placeholder="EquipmentName" value="{{selectedEquipment.equipmentName}}" />
+        </div>
+    </div>
+    <div nz-col class="gutter-row" [nzSpan]="6">
+        Equipment type
+        <div class="inner-box">
+             <input nz-input name="equipmentType" ngModel value="{{selectedEquipment.equipmentType}}"/>
+          </div>
+      </div>
+      <div nz-col class="gutter-row" [nzSpan]="6">
+          Safety level
+        <div class="inner-box">
+             <input nz-input name="saftylevel" placeholder="Saftyleavel" value="{{selectedEquipment.safetyLevel}}" />
+          </div>
+      </div>
+     
+</div>
+<br>
+<div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }" style="color:#0e5679">
+    <div nz-col class="gutter-row" [nzSpan]="6">
+        Drawing number
+        <div class="inner-box">
+             <input nz-input name="drawingumber" placeholder="drawingNumber" value="{{selectedEquipment.drawingNo}}" />
+          </div>
+      </div>
+      <div nz-col class="gutter-row" [nzSpan]="6">
+          Department
+          <div class="inner-box">
+               <input nz-input name="department" placeholder="department" value="{{selectedEquipment.department}}"  />
+            </div>
+        </div>
+        <div nz-col class="gutter-row" [nzSpan]="6">
+            Location
+          <div class="inner-box">
+               <input nz-input name="location" placeholder="location" value="{{selectedEquipment.location}}" />
+            </div>
+        </div>
+        <div nz-col class="gutter-row" [nzSpan]="6">
+            Equipment Status
+          <div class="inner-box">
+               <input nz-input name="equipmetstatus" value="{{selectedEquipment.equipmentstatus}}" placeholder="equipmentstatus"ngModel />
+            </div>
+        </div>
+  </div>
+<br>
+  <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }" style="color:#0e5679">
+    <div nz-col class="gutter-row" [nzSpan]="6">
+        Vessel
+        <div class="inner-box">
+             <input nz-input name="vessel" placeholder="vessel" value="{{selectedEquipment.vessel}}" />
+          </div>
+      </div>
+      <div nz-col class="gutter-row" [nzSpan]="6">
+          Remark
+          <div class="inner-box">
+               <input nz-input name="Remark" placeholder="Remark" value="{{selectedEquipment.remark}}"  />
+            </div>
+        </div>
+        <div nz-col class="gutter-row" [nzSpan]="6">
+            Flag
+          <div class="inner-box">
+               <input nz-input name="flag" placeholder="flag" value="{{selectedEquipment.flag}}" ngModel />
+            </div>
+        </div>
+  </div>
+  

@@ -1,0 +1,22 @@
+<nz-layout >
+  <app-header></app-header>
+  <nz-layout>
+    <nz-sider nzWidth="200px" nzTheme="light" nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0">   
+     <app-side-nav></app-side-nav>
+    </nz-sider>
+    <nz-layout class="inner-layout">
+      <nz-breadcrumb>
+        <!-- <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+        <nz-breadcrumb-item>List</nz-breadcrumb-item>
+        <nz-breadcrumb-item>App</nz-breadcrumb-item> -->
+      </nz-breadcrumb>
+      <nz-content> 
+        <div nz-row>
+          <div nz-col nzSpan="6"><app-tree-view></app-tree-view></div>
+          <div nz-col nzSpan="1"> </div>
+          <div nz-col nzSpan="16"><app-tabstrip></app-tabstrip></div>
+        </div>
+    </nz-content>  
+    </nz-layout>
+  </nz-layout>
+</nz-layout>

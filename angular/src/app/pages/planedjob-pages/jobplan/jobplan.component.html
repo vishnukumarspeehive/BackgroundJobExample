@@ -1,0 +1,271 @@
+<div class="card">
+  <div class="card-header">
+    <div class="row">
+      <div class="col col-md-6">
+       
+      </div>
+      <div class="text-right col col-md-6">
+        <div class="text-lg-right pt-2">
+          <button id="create" nz-button nzType="primary" nzSize="small" (click)="createJobplan()" nzTooltipTitle="ADD" nzTooltipPlacement="topRight" nz-button nz-tooltip>
+            <i class="fa fa-plus"></i>
+
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+
+    <ngx-datatable [rows]="jobplan.items" [count]="jobplan.totalCount" [list]="list" default>
+
+      <ngx-datatable-column [name]="'::Actions' | abpLocalization" [sortable]="false">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+
+          <button nz-button nzType="primary" nzSize="small"(click)="editJobplan(row.id)" nzTooltipTitle="EDIT" nzTooltipPlacement="topRight" nz-button nz-tooltip><i
+              style="display: inline-flex;" nz-icon nzType="edit"></i></button>
+
+          <button nz-button nzType="primary" nzSize="small" (click)="delete(row.id)" nzTooltipTitle="DELETE" nzTooltipPlacement="topRight" nz-button nz-tooltip> <i style="display: inline-flex;"
+              nz-icon nzType="close"></i></button>
+
+          <button nz-button nzType="primary" nzSize="small" [nzType]="'primary'" (click)="showModal(row.id,row.jobOrder)"><i
+              style="display: inline-flex;" nz-icon nzType="eye" nzTheme="outline"></i></button>
+
+        </ng-template>
+      </ngx-datatable-column>
+
+
+      <ngx-datatable-column [name]="'::Job Title' | abpLocalization" prop="jobTitle"></ngx-datatable-column>
+      <ngx-datatable-column [name]="'::Call Frequency' | abpLocalization" prop="calFrequency">
+      </ngx-datatable-column>
+      <ngx-datatable-column [name]="'::Frequency Type' | abpLocalization" prop="frequencyType">
+      </ngx-datatable-column>
+      <ngx-datatable-column [name]="'::Last Done Date' | abpLocalization" prop="lastDoneDate">
+      </ngx-datatable-column>
+      <ngx-datatable-column [name]="'::Next Due Date' | abpLocalization" prop="nextDueDate">
+      </ngx-datatable-column>
+      <ngx-datatable-column [name]="'::Job Order' | abpLocalization" prop="jobOrder">
+      </ngx-datatable-column>
+      <ngx-datatable-column [name]="'::Initial Reading' | abpLocalization" prop="initialReading">
+      </ngx-datatable-column>
+      <ngx-datatable-column [name]="'::Last Reading' | abpLocalization" prop="lastReading">
+      </ngx-datatable-column>
+
+      <ngx-datatable-column [name]="'::Universal Job Code' | abpLocalization" prop="universalJobCode">
+      </ngx-datatable-column>
+      <ngx-datatable-column [name]="'::Interval' | abpLocalization" prop="interval">
+      </ngx-datatable-column>
+      <ngx-datatable-column [name]="'::Due Hours' | abpLocalization" prop="dueHrs">
+      </ngx-datatable-column>
+      <ngx-datatable-column [name]="'::Rhr From Last Maintenance' | abpLocalization" prop="rhrFromLastMaintenance">
+      </ngx-datatable-column>
+
+      <ngx-datatable-column [name]="'::Present Rhr' | abpLocalization" prop="presentRhr">
+      </ngx-datatable-column>
+      <ngx-datatable-column [name]="'::Hours To Go' | abpLocalization" prop="hoursToGo">
+      </ngx-datatable-column>
+      <ngx-datatable-column [name]="'::Previous Reading' | abpLocalization" prop="previousReading">
+      </ngx-datatable-column>
+      <ngx-datatable-column [name]="'::Next Due Hour' | abpLocalization" prop="nextDueHr">
+      </ngx-datatable-column>
+
+    </ngx-datatable>
+  </div>
+</div>
+<abp-modal [(visible)]="isModalOpen">
+  <ng-template #abpHeader>
+    <i class="fa fa-cubes" style="color:#0E5679; margin-top: 2px; padding-right: 5px; font-size: larger;"></i>
+    <h5>Add Job Plan</h5>
+  </ng-template>
+
+  <ng-template #abpBody>
+    <nz-radio-group [(ngModel)]="radioValue">
+      <label class="radlable" nz-radio nzValue="C" name="frequency" id="cal" (click)="setradio('cal')" ngModel>Calendar
+        Based</label>
+      <label class="radlable" nz-radio nzValue="B" name="frequency" id="run" (click)="setradio('run')" ngModel>RHr
+        Based</label>
+    </nz-radio-group>
+    <form [formGroup]="form" (ngSubmit)="save()">
+      <table style="border-collapse: inherit; border-spacing: 10px;">
+        <tr>
+          <td>
+            <div class="form-group">
+              <label for="jobplan-equipmentCode">Equipment Code</label><span> * </span>
+              <input type="text" id="jobplan-equipmentCode" class="form-control" formControlName="equipmentCode" autofocus />
+            </div>
+          </td>
+          <td>
+            <div class="form-group">
+              <label for="jobplan-equipmentName">Equipment name</label><span> * </span>
+              <input type="text" id="jobplan-equipmentName" class="form-control" formControlName="equipmentName" />
+            </div>
+          </td>
+          <td>
+            <div class="form-group">
+              <label for="jobplan-vessel">Vessel</label><span> * </span>
+              <input type="text" id="jobplan-vessel" class="form-control" formControlName="vessel" />
+            </div>
+          </td>
+          <td>
+            <div class="form-group">
+              <label for="jobplan-maintenanceType">Maintenance Type</label>
+              <input type="text" id="jobplan-maintenanceType" class="form-control" formControlName="maintenanceType" />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="form-group">
+              <label for="jobplan-jobTitle">Job Title</label><span> * </span>
+              <input type="text" id="jobplan-jobTitle" class="form-control" formControlName="jobTitle" autofocus />
+            </div>
+          </td>
+          <td>
+            <div class="form-group">
+              <label for="jobplan-jobDescription">Job Description</label><span> * </span>
+              <input type="text" id="jobplan-jobDescription" class="form-control" formControlName="jobDescription" />
+            </div>
+          </td>
+          <td>
+            <div class="form-group">
+              <label for="jobplan-rank">Rank</label>
+              <input type="text" id="jobplan-rank" class="form-control" formControlName="rank" />
+            </div>
+          </td>
+          <td>
+            <div class="form-group">
+              <label for="jobplan-assignedTo">Assigned To</label>
+              <input type="text" id="jobplan-assignedTo" class="form-control" formControlName="assignedTo" />
+            </div>
+          </td>
+        </tr>
+        <tr>
+         
+          
+          <td>
+            <div class="form-group">
+              <label for="jobplan-lastDoneDate">Last Done Date</label>
+              <input type="date" id="jobplan-lastDoneDate" class="form-control" formControlName="lastDoneDate"
+                autofocus />
+            </div>
+          </td>
+          <td>
+            <div class="form-group">
+              <label for="jobplan-jobType">Job Type</label>
+              <input type="text" id="jobplan-jobType" class="form-control" formControlName="jobType" />
+            </div>
+          </td>
+          <td>
+            <div class="form-group">
+              <label for="jobplan-planHorizon">Plan Horizon</label>
+              <input type="text" id="jobplan-planHorizon" class="form-control" formControlName="planHorizon" />
+            </div>
+          </td>
+          <td>
+            <div class="form-group">
+              <label for="jobplan-frequencyType">Frequency Type</label>
+              <input type="text" id="jobplan-frequencyType" class="form-control" formControlName="horizonfrequencyType" />
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          
+         
+          <td>
+            <div class="form-group">
+              <label for="jobplan-remark">Remark</label>
+              <input type="text" id="jobplan-remark" class="form-control" formControlName="remark" />
+            </div>
+          </td>
+          <td>
+            <div class="form-group">
+              <label for="jobplan-department">Department</label>
+              <input type="text" id="jobplan-department" class="form-control" formControlName="department" />
+            </div>
+          </td>
+          <td *ngIf="isSelected('cal')">
+            <div class="form-group">
+              <label for="jobplan-calFrequency">Frequency</label>
+              <input type="text" id="jobplan-calFrequency" class="form-control" formControlName="calFrequency" />
+            </div>
+          </td>
+          <td *ngIf="isSelected('run')">
+            <div class="form-group">
+              <label for="jobplan-interval">Interval</label>
+              <input type="text" id="jobplan-interval" class="form-control" formControlName="interval" />
+            </div>
+          </td>
+          <td>
+            <div class="form-group">
+              <label for="jobplan-frequencyType">Frequency Type</label>
+              <input type="text" id="jobplan-frequencyType" class="form-control" formControlName="frequencyType" />
+            </div>
+          </td>
+        </tr>
+        <tr>
+         
+          
+          <td>
+            <div class="form-group">
+              <label for="jobplan-priority">Priority</label>
+              <input type="text" id="jobplan-priority" class="form-control" formControlName="priority" />
+            </div>
+          </td>
+       
+         
+        </tr>
+       
+        </table>
+    </form>
+
+  </ng-template>
+
+  <ng-template #abpFooter>
+
+    <button nz-button nzType="primary" nzSize="small" #abpClose>
+      <i nz-icon nzType="close"></i>
+    </button>
+
+    <!--added save button-->
+    
+    <button nz-button nzType="primary" nzSize="small" (click)="save()" [disabled]="form.invalid" id="submit">
+      <i nz-icon nzType="save"></i>
+    </button>
+
+  </ng-template>
+
+</abp-modal>
+
+
+<!-- Modal -->
+
+<div>
+
+  <nz-modal [(nzVisible)]="isVisible"  nzOkText="Ok" nzCancelText="Cancel" (nzOnOk)="handleOk()"
+    (nzOnCancel)="handleCancel()" [nzStyle]="{ width: '100%' }" class="d1">
+    <ng-container *nzModalContent>
+      
+
+      <div>
+        <div class="tab">
+          <!-- <button class="tablinks"  (click)="onTabClick(0)">Basic Details</button>&nbsp;&nbsp;&nbsp; -->
+          <button class="tablinks" (click)="onTabClick(1)">Basic Details</button>&nbsp;&nbsp;&nbsp;
+          <button class="tablinks" (click)="onTabClick(3)">Job History</button>
+        </div>
+      </div>
+      <div>
+        <app-basic-jobplan-details [getjobplanId]="jobplanId" *ngIf="tabIndex === 0"></app-basic-jobplan-details>
+        <app-jobplan-detail-by-date [getjobplanId]="jobplanId" *ngIf="tabIndex === 1"></app-jobplan-detail-by-date>
+        <app-jpbplan-detail-by-hr [getjobplanId]="jobplanId" *ngIf="tabIndex === 2"></app-jpbplan-detail-by-hr>
+        <app-jobplan-history *ngIf="tabIndex === 3"></app-jobplan-history>
+      </div>
+
+    </ng-container>
+  </nz-modal>
+</div>
+<br />
+<!-- <button nz-button nzType="primary" (click)="showConfirm()">Confirm</button> -->
+
+
+
+<!--Model end-->

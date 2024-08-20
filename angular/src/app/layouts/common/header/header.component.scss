@@ -1,0 +1,114 @@
+.logo {
+    width: auto;
+    height: auto;
+    /* background: rgba(255, 255, 255, 0.2); */
+    /* margin: 16px 30px 16px 0; */
+    margin-top: 1px;
+    padding: 0px;
+    border-color: #0e5679;
+    background-color: white;
+    margin-left: -40px;
+  
+  }
+  .navbar-brand{
+    //font-size: 22px;
+    color:#0e5679;
+    background-color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+   // font-weight: bold;
+    margin-top: 0%;
+    padding-top: 0%;
+    padding-bottom: 0%;
+  
+  }
+  .header-menu {
+    line-height: 64px;
+    background-color: white;
+  }
+  a{
+      font-size: 13px; 
+    color:#0e5679;
+    background-color: white;
+  }
+  
+  .sider-menu {
+    height: 100%;
+    border-right: 0;
+    color: #0e5679;
+    background: #fff;
+    font-weight: bold;
+  }
+  
+  .inner-layout {
+    padding: 0 24px 24px;
+   
+  }
+  
+  nz-breadcrumb {
+    margin: 16px 0;
+   
+  }
+  
+  nz-content {
+    background: #fff;
+    padding: 24px;
+    min-height: 280px;
+    
+  }
+  .ant-layout-header{
+    background-color: white;
+  }
+  li.ant-menu-item{
+    color: #0e5679;
+    background: #fff;
+  }
+  
+  
+  
+  .trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+    width: 200px;
+  }
+  
+  .trigger:hover {
+    color: #1890ff;
+  }
+  h4{
+      
+  
+    color:#0e5679;
+    background-color: white;
+    position: relative;
+    float: right;
+    margin-left: 0%;
+    margin-top: 20px;
+  }
+  .left
+  {
+  float: left;
+  width:25%;  
+  }
+  .right
+  {
+  display: inline;
+  margin-left: 50%;
+   }
+   #parent_div_1, #parent_div_2{
+    //width:100px;
+    //height:100px;
+    //border:1px solid red;
+    margin-right:20px;
+    float:left;
+}
+.child_div_1{
+    float:left;
+    margin-right:5px;
+}
+#parent_div_3{
+  float: right;
+}

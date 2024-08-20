@@ -1,0 +1,42 @@
+<nz-layout >
+  <app-header></app-header>
+  <nz-layout>
+    <nz-sider nzWidth="200px" nzTheme="light" nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0">   
+     <app-side-nav></app-side-nav>
+    </nz-sider>
+      <nz-layout class="inner-layout">
+        
+        <nz-content>
+
+                    <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select your choice" [(ngModel)]="selectedValue" 
+                          (ngModelChange)="onSelection($event)" style="color:#0e5679;font-size: 12px;">
+                    <nz-option nzLabel="Maker" nzValue="Maker"></nz-option>
+                    <nz-option nzLabel="Model" nzValue="Model"></nz-option>
+                   
+                    <nz-option nzLabel="CBM" nzValue="CBM"></nz-option>
+                    <nz-option nzLabel="Critical" nzValue="Critical"></nz-option>
+                    <nz-option nzLabel="Priority" nzValue="Priority"></nz-option>
+                    <nz-option nzLabel="Rank" nzValue="Rank"></nz-option>
+                    <nz-option nzLabel="MaintenanceType" nzValue="MaintenanceType"></nz-option>
+                    <nz-option nzLabel="Safetylevel" nzValue="Safetylevel"></nz-option>
+                    <nz-option nzLabel="Location" nzValue="Location"></nz-option>
+                    <nz-option nzLabel="Frequency" nzValue="Frequency"></nz-option>
+                    <nz-option nzLabel="CBM Configure" nzValue="CBM Configure"></nz-option>
+                    
+                    <nz-option nzLabel="FrequencyType" nzValue="FrequencyType"></nz-option>
+                    <nz-option nzLabel="EquipmentStatus" nzValue="EquipmentStatus"></nz-option>
+                    <nz-option nzLabel="EquipmentType" nzValue="EquipmentType"></nz-option>
+                    <nz-option nzLabel="JobStatus" nzValue="JobStatus"></nz-option>
+                    <nz-option nzLabel="JobType" nzValue="JobType"></nz-option>
+                    <nz-option nzLabel="Reportby" nzValue="Reportby"></nz-option>
+                    
+
+                  </nz-select>
+                  <br>
+                  <br>
+                  <router-outlet></router-outlet>
+        
+      </nz-content>
+      </nz-layout>
+    </nz-layout>
+  </nz-layout>
